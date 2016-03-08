@@ -7,12 +7,12 @@ general:
 
 dependencies:
   pre:
-    - cp -R run ~/run
-    - pip install --user cairosvg
-    - ~/run/pull_results.sh
+    - pip install --user cairosvg pyjavaproperties
   override:
-    - unzip -n ~/run/robocode-1.9.2.5-setup.jar -d .
+    - cp -R run ~/run
+    - unzip ~/run/robocode-1.9.2.5-setup.jar -d .
     - mkdir ~/battles
+    - ~/run/pull_results.sh
   cache_directories:
     - ~/gh-results
 
